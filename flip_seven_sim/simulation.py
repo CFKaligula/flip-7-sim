@@ -55,7 +55,10 @@ class Simulation:
         for player_id, score in sorted_items_by_value:
             player_strategy = [player.strategy for player in self.players if player.id == player_id][0]
 
-            log_string += f'\n\tPlayer {player_id} ({player_strategy}): {score}'
+            title = f'\n\tPlayer {player_id} ({player_strategy}):'
+            padding = 40
+
+            log_string += f'{title:<{padding}} {score}'
         log_string += '\n**********************************************************'
 
         logbasic.success(log_string)
@@ -63,6 +66,8 @@ class Simulation:
     def log_held_cards(self):
         log_string = '***Held Cards***'
         for player in self.players:
-            log_string += f'\n\t\t Player {player.id} ({player.strategy}): {player.held_cards}'
+            title = f'\n\t\t Player {player.id} ({player.strategy}):'
+            padding = 40
+            log_string += f'{title:<{padding}} {player.held_cards}'
 
         logbasic.debug(log_string)

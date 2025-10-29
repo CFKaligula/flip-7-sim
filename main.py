@@ -18,7 +18,7 @@ def main():
             NoMid(),
         ]
     )
-    sim.run(n_rounds=300000)
+    sim.run(n_rounds=int(1e7))
 
 
 if __name__ == '__main__':

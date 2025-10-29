@@ -7,7 +7,7 @@ class Deck:
 
     def make_cards(self):
         cards = []
-        for i in range(12):
+        for i in range(13):
             iter_cards = [i] * i
             cards.extend(iter_cards)
 
@@ -22,3 +22,4 @@ class Deck:
 if __name__ == '__main__':
     deck = Deck()
     card = deck.take_card()
+    print(sorted(deck.cards))
